@@ -1,5 +1,5 @@
 /* eslint-disable github/array-foreach */
-import { WORDS } from "./data";
+import { WORDS, keyBoard } from "./data";
 
 export const randomWord = (lengthPossible) => {
   const possibleWords = WORDS.filter((word) =>
@@ -52,8 +52,18 @@ export const getBestWord = (attemptsWords) => {
       }
     }
   }
-  console.log(bestWord);
   return bestWord;
+};
 
-  //attemptsWords.filter(())
+export const getKeyBoard = () => {
+  const keyBoardRow = [];
+  for (let x = 0; x < keyBoard.length; x++) {
+    const array = [];
+    for (let y = 0; y < keyBoard[x].length; y++) {
+      array.push({ value: keyBoard[x][y], status: "UNKNOWN" });
+    }
+    keyBoardRow.push(array);
+  }
+
+  return keyBoardRow;
 };

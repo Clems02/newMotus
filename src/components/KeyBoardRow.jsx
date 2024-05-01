@@ -10,12 +10,13 @@ const BoxStyled = styled(Box)(({ theme }) => ({
 const KeyBoardRow = ({ row, handleClick }) => {
   return (
     <BoxStyled>
-      {row.map((letter, index) => {
+      {row.map(({ value, status }, index) => {
         return (
           <KeyBoardCell
-            letter={letter}
+            letter={value}
+            status={status}
             key={index}
-            onClick={() => handleClick(letter)}
+            onClick={() => handleClick(value)}
           />
         );
       })}
