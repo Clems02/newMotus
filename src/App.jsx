@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Theme from "./theme/Theme";
 import useSound from "./hooks/useSound";
 import { Button } from "@mui/material";

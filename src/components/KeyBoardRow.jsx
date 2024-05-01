@@ -7,25 +7,7 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 
-const KeyBoardRow = ({ row }) => {
-  const { gameStatus } = useGame();
-
-  const handleClick = (key) => {
-    if (gameStatus !== "PLAYING") return;
-
-    if (key === "SUPP") {
-      console.log("Logique de supp lettre");
-      return;
-    }
-
-    if (key === "ENTER") {
-      console.log("Logique de submit");
-      return;
-    }
-
-    console.log("Logique add letter");
-  };
-
+const KeyBoardRow = ({ row, handleClick }) => {
   return (
     <BoxStyled>
       {row.map((letter, index) => {

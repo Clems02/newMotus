@@ -1,6 +1,7 @@
 import { Box, Typography, styled } from "@mui/material";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import useGame from "../hooks/useGame";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   border: "3px solid gray",

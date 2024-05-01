@@ -3,7 +3,8 @@ import useGame from "./useGame";
 import { isLetter } from "../utils/service";
 
 const useKeyBoard = () => {
-  const { gameStatus } = useGame();
+  const { gameStatus, handleAddLetter, handleRemoveLetter, handleSubmitWord } =
+    useGame();
 
   useEffect(() => {
     const handleKeyDownT = (e) => {
@@ -11,15 +12,15 @@ const useKeyBoard = () => {
 
       const key = e.key.toUpperCase();
       if (key === "ENTER") {
-        //onSubmit();
+        handleSubmitWord();
       }
 
       if (key === "BACKSPACE") {
-        //onDelete();
+        handleRemoveLetter();
       }
 
       if (isLetter(key)) {
-        //onKeyDown(keyPress);
+        handleAddLetter(key);
       }
     };
 

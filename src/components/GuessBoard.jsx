@@ -1,18 +1,21 @@
 import { Box } from "@mui/material";
-import React from "react";
 import useGame from "../hooks/useGame";
 import GuessBoardRow from "./GuessBoardRow";
 
 const GuessBoard = () => {
-  const { maxAttempts } = useGame();
+  const { attemptsWords, currentAttempt } = useGame();
 
   return (
     <Box>
-      {Array.from({ length: maxAttempts })
-        .fill("")
-        .map((_, index) => {
-          return <GuessBoardRow key={index} />;
-        })}
+      {attemptsWords.map((row, index) => {
+        return (
+          <GuessBoardRow
+            key={index}
+            row={row}
+            activeRow={currentAttempt >= index}
+          />
+        );
+      })}
     </Box>
   );
 };

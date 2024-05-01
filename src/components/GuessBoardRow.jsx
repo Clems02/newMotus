@@ -1,16 +1,25 @@
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import useGame from "../hooks/useGame";
 import GuessBoardCell from "./GuessBoardCell";
 
-const GuessBoardRow = () => {
-  const { targetWord } = useGame();
+const BoxStyled = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+}));
 
+const GuessBoardRow = ({ row, activeRow }) => {
   return (
-    <Box>
-      {[...targetWord].map((letter, index) => {
-        return <GuessBoardCell key={index} letter={letter} />;
+    <BoxStyled>
+      {row.map(({ value, status }, index) => {
+        return (
+          <GuessBoardCell
+            key={index}
+            letter={activeRow && value}
+            status={status}
+          />
+        );
       })}
-    </Box>
+    </BoxStyled>
   );
 };
 

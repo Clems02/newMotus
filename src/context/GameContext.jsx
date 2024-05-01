@@ -7,10 +7,14 @@ const GameContext = createContext({
   wordLengthPossibility: [],
   handleSetParameters: () => {},
   handleNewGame: () => {},
+  handleAddLetter: () => {},
+  handleRemoveLetter: () => {},
+  handleSubmitWord: () => {},
 
   targetWord: "",
-  currentAttempts: 0,
+  currentAttempt: 0,
   currentWord: "",
+  attempsWords: [],
 });
 
 export default GameContext;
