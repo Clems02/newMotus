@@ -1,10 +1,10 @@
 import { Box, styled } from "@mui/material";
-import useGame from "../hooks/useGame";
 import GuessBoardCell from "./GuessBoardCell";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
+  margin: "10px",
 }));
 
 const GuessBoardRow = ({ row, activeRow }) => {

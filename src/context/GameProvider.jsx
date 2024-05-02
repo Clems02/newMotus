@@ -146,7 +146,7 @@ const GameProvider = ({ children }) => {
         handleSubmitWord,
       }}
     >
-      Target word: {targetWord} <br />
+      {/* Target word: {targetWord} <br />
       currentAttempts: {currentAttempt} <br />
       maxAttempts: {maxAttempts} <br />
       current index Letter: {currentIndexLetter}
@@ -164,7 +164,7 @@ const GameProvider = ({ children }) => {
       >
         Clg attempsWords
       </Button>
-      <Button onClick={() => handleNewGame()}>new game</Button>
+      <Button onClick={() => handleNewGame()}>new game</Button> */}
       {children}
     </GameContext.Provider>
   );
